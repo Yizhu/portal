@@ -1,0 +1,63 @@
+<nav class="gtco-nav" role="navigation">
+  <div class="gtco-container">
+    <div class="row">
+      <div class="col-xs-2">
+        <app-logo [type]="logoType"></app-logo>
+      </div>
+      <div class="col-xs-8 text-center menu-1">
+        <ul>
+          <li [ngClass]="{'active' : currentPath == 'index'}">
+            <a href="/index">Home</a>
+          </li>
+          <li [ngClass]="{'active' : currentPath == 'about'}">
+            <a href="/about">About</a>
+          </li>
+          <li class="has-dropdown">
+            <a>Services</a>
+            <ul class="dropdown">
+              <li>
+                <a>Features</a>
+              </li>
+              <li>
+                <a>APM</a>
+              </li>
+              <li>
+                <a href="/login">Dashboard</a>
+              </li>
+              <li>
+                <a>Alerts</a>
+              </li>
+              <li>
+                <a>API</a>
+              </li>
+              <li>
+                <a>Resources</a>
+              </li>
+              <li>
+                <a href="/documentation">Documentation</a>
+              </li>
+            </ul>
+          </li>
+          <li [ngClass]="{'active' : currentPath == 'intergrations'}">
+            <a href="/intergrations">Intergrations</a>
+          </li>
+          <li [ngClass]="{'active' : currentPath == 'contact'}">
+            <a href="/contact">Contact</a>
+          </li>
+          <li [ngClass]="{'active' : currentPath == 'blog'}">
+            <a href="/blog">Blog</a>
+          </li>
+          <li>
+            <a>Admin</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xs-2 text-right hidden-xs menu-2">
+        <app-login-button *ngIf="!user"></app-login-button>
+        <div *ngIf="!!user">
+          <a href="/index" class="btn btn-cta">{{user}}</a>
+        </div>
+    </div>
+  </div>
+  </div>
+</nav>
