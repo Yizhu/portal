@@ -47,17 +47,34 @@
           <li [ngClass]="{'active' : currentPath == 'blog'}">
             <a href="/blog">Blog</a>
           </li>
+          <!-- <li class="has-dropdown">
+            <a>{{ 'Language' | translate }}</a>
+            <ul class="dropdown">
+              <li>
+                <a (click)="changeLang('en')">English</a>
+              </li>
+              <li>
+                <a (click)="changeLang('zh')">中文</a>
+              </li>
+            </ul>
+          </li> -->
           <li>
             <a>Admin</a>
           </li>
         </ul>
       </div>
-      <div class="col-xs-2 text-right hidden-xs menu-2">
+      <div class="col-xs-2 text-right hidden-xs menu-2" style="
+      display: inline-flex;">
+        <select [(ngModel)]="selectedLan" (change)="changeLang($event)">
+          <!-- <option value="zh">中文</option>
+          <option value="en">English</option> -->
+          <option *ngFor="let c of languages" [ngValue]="c.value">{{c.name}}</option>
+        </select>
         <app-login-button *ngIf="!user"></app-login-button>
         <div *ngIf="!!user">
           <a href="/index" class="btn btn-cta">{{user}}</a>
         </div>
+      </div>
     </div>
-  </div>
   </div>
 </nav>

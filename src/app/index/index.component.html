@@ -4,6 +4,7 @@
   <!-- navigation  -->
   <app-menu-bar [logoType]="'big'"></app-menu-bar>
   <!-- navigation  -->
+
   <header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(./assets/images/img_bg_1.jpg);">
     <div class="gtco-container">
       <div class="row">
@@ -16,7 +17,7 @@
               </h2>
               <h2>See inside any stack, any app, at any scale, anywhere.</h2>
               <p>
-                <a href="/login" class="btn btn-default">Get Started</a>
+                <a href="/login" class="btn btn-default">{{ 'start' | translate }}</a>                
               </p>
             </div>
           </div>
@@ -436,7 +437,7 @@
       </div>
     </div>
   </div>
-  <app-footer></app-footer>  
+  <app-footer></app-footer>
 </div>
 
 <div class="gototop js-top">

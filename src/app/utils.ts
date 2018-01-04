@@ -17,6 +17,8 @@ export default class Utils {
     }
 
     static offcanvasMenu() {
+        // $('#gtco-offcanvas').remove();
+        // $('.gtco-nav-toggle').remove();
         $('#page').prepend('<div id="gtco-offcanvas" />');
         $('#page').prepend('<a href="#" class="js-gtco-nav-toggle gtco-nav-toggle gtco-nav-white"><i></i></a>');
         var clone1 = $('.menu-1 > ul').clone();
