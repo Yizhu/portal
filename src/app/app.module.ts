@@ -1,11 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpModule, Http } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import * as $ from 'jquery';
+
+import { UtilsService } from './service/utils.service';
+import { CoreService } from './service/core.service';
+import { SDKBrowserModule } from './service/sdk';
 
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
@@ -22,6 +27,7 @@ import { LogoComponent } from './shared/logo/logo.component';
 import { LoginButtonComponent } from './shared/login-button/login-button.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SnackbarComponent } from './shared/snackbar/snackbar.component';
+import { LoginFormComponent } from './shared/login-form/login-form.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -43,7 +49,8 @@ export function createTranslateLoader(http: HttpClient) {
     LogoComponent,
     LoginButtonComponent,
     FooterComponent,
-    SnackbarComponent
+    SnackbarComponent,
+    LoginFormComponent
   ],
   imports: [
     HttpModule,
@@ -51,6 +58,7 @@ export function createTranslateLoader(http: HttpClient) {
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    SDKBrowserModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -59,7 +67,7 @@ export function createTranslateLoader(http: HttpClient) {
       }
     })
   ],
-  providers: [],
+  providers: [UtilsService, CoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

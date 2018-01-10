@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import Utils from '../utils';
+import { UtilsService } from '../service/utils.service';
 
 @Component({
   selector: 'app-registry-agentid',
@@ -8,10 +8,10 @@ import Utils from '../utils';
 })
 export class RegistryAgentidComponent implements OnInit {
 
-  constructor() { }
+  constructor(private utilsService: UtilsService) { }
 
   ngOnInit() {
-    Utils.init();
+    this.utilsService.init();
   }
 
 }

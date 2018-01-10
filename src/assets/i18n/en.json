@@ -1,5 +1,13 @@
 {
-    "Language": "Language",
-    "start": "Get Started"
+    "0101": "Empty Username",
+    "0102": "Empty Password",
+    "0103": "Invalid Username/Password",
+    "0104": "Search Error",
+    "0105": "User Not Found",
+    "0201": "Find Or Create Error",
+    "0301": "Create Access Token Error",
+    "0401": "Failed Update Org User",
+    "0402": "Failed To Create User",
+    "0403": "DNS Has a Problem"
 }
   

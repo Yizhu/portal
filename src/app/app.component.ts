@@ -7,17 +7,9 @@ import { Http, Response } from '@angular/http';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
-  configFile: string = '/assets/config.json?nocache=' + (new Date()).getTime();
+export class AppComponent {  
 
-  constructor(private http: Http) {
-      this.http.get(this.configFile)
-      .toPromise()
-      .then(response => {
-        let langSet = response.json().language;
-        if (localStorage.getItem('lang') === null) {       
-          localStorage.setItem('lang', langSet[0].value);         
-        }      
-      });  
+  constructor() {
   }
+  
 }

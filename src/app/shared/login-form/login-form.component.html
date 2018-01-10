@@ -1,0 +1,32 @@
+<div class="gtco-container">
+  <div class="row animate-box">
+    <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+      <h2>Get Started</h2>
+    </div>
+  </div>
+  <div class="row animate-box">
+    <div class="col-md-12">
+      <div class="form-inline">
+        <div class="col-md-4 col-sm-4">
+          <div class="form-group">
+            <label for="employid" class="sr-only">Employeeid</label>
+            <input type="text" class="form-control" id="employid" placeholder="Employee Id" 
+            [(ngModel)]="username" (keyup.enter)="login()">
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="form-group">
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password" 
+            [(ngModel)]="password" (keyup.enter)="login()">
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <button [disabled]="!username || !password" type="button" class="btn btn-default btn-block" 
+          (click)="login()">Login</button>
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>
+<app-snackbar [type]="'warning'" [msg]="msg"></app-snackbar>

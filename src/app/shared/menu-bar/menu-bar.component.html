@@ -74,6 +74,16 @@
         <div *ngIf="!!user">
           <a href="/index" class="btn btn-cta">{{user}}</a>
         </div>
+        <!-- <div *ngIf="!!user"  (click)="logout()">
+          <a class="btn btn-cta">Logout</a>
+        </div> -->
+        <ul *ngIf="!!user" (click)="logout()">
+          <li class="btn-cta">
+            <a>
+              <span>Logout</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

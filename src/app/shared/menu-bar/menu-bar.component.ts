@@ -16,9 +16,9 @@ export class MenuBarComponent implements OnInit {
     private translate: TranslateService
   ) {
     let lang;
-    if(!localStorage.getItem('lang')){
+    if (!localStorage.getItem('lang')) {
       lang = "zh";
-    }else{
+    } else {
       lang = localStorage.getItem('lang');
     }
     this.translate.setDefaultLang(lang);
@@ -44,9 +44,9 @@ export class MenuBarComponent implements OnInit {
   ngOnInit() {
     this.currentPath = this.route.routeConfig.path;
     let lang;
-    if(!localStorage.getItem('lang')){
+    if (!localStorage.getItem('lang')) {
       lang = "zh";
-    }else{
+    } else {
       lang = localStorage.getItem('lang');
     }
     this.selectedLan = lang;
@@ -59,4 +59,8 @@ export class MenuBarComponent implements OnInit {
     // setTimeout(Utils.offcanvasMenu, 1000);
   }
 
+  logout() {
+    localStorage.clear();
+    window.location.href = "/index";
+  }
 }

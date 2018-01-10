@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import Utils from '../utils';
+import { UtilsService } from '../service/utils.service';
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -7,10 +7,10 @@ import Utils from '../utils';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+  constructor(private utilsService: UtilsService) { }
 
   ngOnInit() {
-    Utils.init();
+    this.utilsService.init();
   }
 
 }

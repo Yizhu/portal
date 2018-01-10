@@ -2,7 +2,7 @@
 
 <div id="page">
   <!-- navigation  -->
-  <app-menu-bar [logoType]="'big'"></app-menu-bar>
+  <app-menu-bar [logoType]="'big'" [user]="username"></app-menu-bar>
   <!-- navigation  -->
 
   <header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(./assets/images/img_bg_1.jpg);">
@@ -17,7 +17,7 @@
               </h2>
               <h2>See inside any stack, any app, at any scale, anywhere.</h2>
               <p>
-                <a href="/login" class="btn btn-default">{{ 'start' | translate }}</a>                
+                <a href="/login" class="btn btn-default">Get Started</a>                
               </p>
             </div>
           </div>
@@ -405,37 +405,7 @@
 
 
   <div id="gtco-started">
-    <div class="gtco-container">
-      <div class="row animate-box">
-        <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-          <h2>Get Started</h2>
-        </div>
-      </div>
-      <div class="row animate-box">
-        <div class="col-md-12">
-          <form class="form-inline">
-            <div class="col-md-4 col-sm-4">
-              <div class="form-group">
-                <label for="employid" class="sr-only">Employeeid</label>
-                <input type="text" class="form-control" id="employid" placeholder="Employee Id" value="10311058">
-                <!--<label for="email" class="sr-only">Email</label>
-                          <input type="email" class="form-control" id="email" placeholder="Email">-->
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-              <div class="form-group">
-                <label for="password" class="sr-only">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password" value="123456">
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-4">
-              <!--<button type="submit" class="btn btn-default btn-block">Sign In</button>-->
-              <button type="button" class="btn btn-default btn-block" onclick="location.href='/registry_agentid';">Login</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+    <app-login-form></app-login-form>
   </div>
   <app-footer></app-footer>
 </div>

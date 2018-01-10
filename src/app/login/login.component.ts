@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import Utils from '../utils';
-import { SnackbarComponent } from '../shared/snackbar/snackbar.component';
+import { Component, OnInit } from '@angular/core';
+import { UtilsService } from '../service/utils.service';
+
+
 
 @Component({
   selector: 'app-login',
@@ -9,21 +10,15 @@ import { SnackbarComponent } from '../shared/snackbar/snackbar.component';
 })
 export class LoginComponent implements OnInit {
 
-  @ViewChild(SnackbarComponent)
-  private snackbarComponent: SnackbarComponent;
 
-  constructor() { }
-
-  msg: string;
+  constructor(
+    private utilsService: UtilsService,
+  ) { }
 
   ngOnInit() {
-    Utils.init();
+    this.utilsService.init();
   }
 
-  myFunction() {
-    this.msg = "Password incorrect! Please try again.";
-    this.snackbarComponent.showBar();
-  }
-
+  
 
 }
