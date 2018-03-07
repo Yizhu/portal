@@ -19,7 +19,6 @@ import { DocumentationComponent } from './documentation/documentation.component'
 import { LoginComponent } from './login/login.component';
 import { IntergrationsComponent } from './intergrations/intergrations.component';
 import { ContactComponent } from './contact/contact.component';
-import { BlogComponent } from './blog/blog.component';
 import { RegistryAgentidComponent } from './registry-agentid/registry-agentid.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MenuBarComponent } from './shared/menu-bar/menu-bar.component';
@@ -42,7 +41,6 @@ export function createTranslateLoader(http: HttpClient) {
     LoginComponent,
     IntergrationsComponent,
     ContactComponent,
-    BlogComponent,
     RegistryAgentidComponent,
     DashboardComponent,
     MenuBarComponent,

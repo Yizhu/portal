@@ -38,7 +38,7 @@ export class LoginFormComponent implements OnInit {
     this.userService.login(credentials)
       .toPromise()
       .then(result => {
-        let displayName = result.user.email.split("@")[0] + "/" + result.user.Site_ID + "/Wistron";
+        let displayName = result.user.email.split("@")[0] + "/" + result.user.Site_ID + "/";
         localStorage.setItem('$UserInfo$username', displayName);
         window.location.href = "/index";
       })

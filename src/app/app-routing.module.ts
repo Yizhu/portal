@@ -6,7 +6,6 @@ import { DocumentationComponent } from './documentation/documentation.component'
 import { LoginComponent } from './login/login.component';
 import { IntergrationsComponent } from './intergrations/intergrations.component';
 import { ContactComponent } from './contact/contact.component';
-import { BlogComponent } from './blog/blog.component';
 import { RegistryAgentidComponent } from './registry-agentid/registry-agentid.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
@@ -20,7 +19,6 @@ const routes: Routes = [
   { path: 'dashboard', component:  DashboardComponent},
   { path: 'intergrations', component:  IntergrationsComponent},
   { path: 'contact', component:  ContactComponent},
-  { path: 'blog', component:  BlogComponent},
   { path: '**', redirectTo: '/index', pathMatch: 'full'}
 ];
 

@@ -44,9 +44,6 @@
           <li [ngClass]="{'active' : currentPath == 'contact'}">
             <a href="/contact">Contact</a>
           </li>
-          <li [ngClass]="{'active' : currentPath == 'blog'}">
-            <a href="/blog">Blog</a>
-          </li>
           <!-- <li class="has-dropdown">
             <a>{{ 'Language' | translate }}</a>
             <ul class="dropdown">
@@ -58,18 +55,16 @@
               </li>
             </ul>
           </li> -->
-          <li>
+          <!-- <li>
             <a>Admin</a>
-          </li>
+          </li> -->
         </ul>
       </div>
       <div class="col-xs-2 text-right hidden-xs menu-2" style="
       display: inline-flex;">
-        <select [(ngModel)]="selectedLan" (change)="changeLang($event)">
-          <!-- <option value="zh">中文</option>
-          <option value="en">English</option> -->
+        <!-- <select [(ngModel)]="selectedLan" (change)="changeLang($event)">
           <option *ngFor="let c of languages" [ngValue]="c.value">{{c.name}}</option>
-        </select>
+        </select> -->
         <app-login-button *ngIf="!user"></app-login-button>
         <div *ngIf="!!user">
           <a href="/index" class="btn btn-cta">{{user}}</a>
