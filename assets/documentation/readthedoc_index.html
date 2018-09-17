@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://docs.readthedocs.io/en/latest/design.html -->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"
+      lang="en" style=""><!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Designing Read the Docs â€” Read the Docs 1.0 documentation</title>
+
+
+    <link rel="stylesheet" href="./readthedoc_index_files/sphinx_rtd_theme.css" type="text/css">
+
+    <link rel="stylesheet" href="./readthedoc_index_files/custom.css" type="text/css">
+
+
+    <link rel="index" title="Index" href="http://docs.readthedocs.io/en/latest/genindex.html">
+    <link rel="search" title="Search" href="http://docs.readthedocs.io/en/latest/search.html">
+    <link rel="top" title="Read the Docs 1.0 documentation" href="http://docs.readthedocs.io/en/latest/index.html">
+    <link rel="next" title="Read the Docs Theme" href="http://docs.readthedocs.io/en/latest/theme.html">
+    <link rel="prev" title="Local VM Install"
+          href="http://docs.readthedocs.io/en/latest/custom_installs/local_rtd_vm.html">
+
+
+    <script type="text/javascript" async="" src="./readthedoc_index_files/ga.js.ä¸‹è¼‰"></script>
+    <script src="./readthedoc_index_files/modernizr.min.js.ä¸‹è¼‰"></script>
+
+
+    <!-- RTD Extra Head -->
+
+    <!--
+    Always link to the latest version, as canonical.
+    http://docs.readthedocs.org/en/latest/canonical.html
+    -->
+    <link rel="canonical" href="http://docs.readthedocs.io/en/latest/design.html">
+
+    <link rel="stylesheet" href="./readthedoc_index_files/readthedocs-doc-embed.css" type="text/css">
+
+    <script type="text/javascript" src="./readthedoc_index_files/readthedocs-data.js.ä¸‹è¼‰"></script>
+
+    <!-- Add page-specific data, which must exist in the page js, not global -->
+    <script type="text/javascript">
+READTHEDOCS_DATA['page'] = 'design' 		
+READTHEDOCS_DATA['source_suffix'] = '.rst'
+
+    </script>
+
+    <script type="text/javascript" src="./readthedoc_index_files/readthedocs-dynamic-include.js.ä¸‹è¼‰"></script>
+
+    <!-- end RTD <extrahead> --></head>
+
+<body class="wy-body-for-nav" role="document" style="">
+
+
+<div class="wy-grid-for-nav">
+
+
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+        <div class="wy-side-scroll">
+            <div class="wy-side-nav-search">
+
+
+                <a href="http://docs.readthedocs.io/en/latest/index.html">
+
+
+                    <img src="./readthedoc_index_files/logo.svg" class="logo">
+
+                </a>
+
+
+                <div role="search">
+                    <form id="rtd-search-form" class="wy-form" action="http://docs.readthedocs.io/en/latest/search.html"
+                          method="get">
+                        <input type="text" name="q" placeholder="Search docs">
+                        <input type="hidden" name="check_keywords" value="yes">
+                        <input type="hidden" name="area" value="default">
+                    </form>
+                </div>
+
+
+            </div>
+
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+
+
+                <p class="caption"><span class="caption-text">User Documentation</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/getting_started.html">Getting
+                        Started</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/versions.html">Host</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/builds.html">ElasticSearch</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/features.html">Kafka</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/support.html">Redis</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/faq.html">MQTT</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/yaml-config.html">MySql</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/guides/index.html">Nginx</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/api.html">MS SQL Server</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/embed.html">Zookeeper</a></li>
+                </ul>
+                <p class="caption"><span class="caption-text">About Read the Docs</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/contribute.html">Contributing
+                        to Read the Docs</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/team.html">Read the Docs
+                        Team</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/code-of-conduct.html">Code of
+                        Conduct</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/ethical-advertising.html">Ethical
+                        Advertising</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/sponsors.html">Sponsors of Read
+                        the Docs</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/open-source-philosophy.html">Read
+                        the Docs Open Source Philosophy</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/story.html">The Story of Read
+                        the Docs</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/talks.html">Talks about Read
+                        the Docs</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/dmca/index.html">DMCA Takedown
+                        Policy</a></li>
+                </ul>
+                <p class="caption"><span class="caption-text">Feature Documentation</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/webhooks.html">Webhooks</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/badges.html">Badges</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/alternate_domains.html">Alternate
+                        Domains</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/localization.html">Localization
+                        of Documentation</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/vcs.html">Version Control
+                        System Integration</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/subprojects.html">Subprojects</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/conda.html">Conda Support</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/canonical.html">Canonical
+                        URLs</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/single_version.html">Single
+                        Version Documentation</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/privacy.html">Privacy
+                        Levels</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/user-defined-redirects.html">User-defined
+                        Redirects</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/automatic-redirects.html">Automatic
+                        Redirects</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/features/embed.html">Content
+                        Embedding</a></li>
+                </ul>
+                <p class="caption"><span class="caption-text">Developer Documentation</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/changelog.html">Changelog</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/install.html">Installation</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/architecture.html">Architecture</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/tests.html">Testing</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/docs.html">Building and
+                        Contributing to Documentation</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/development/standards.html">Front
+                        End Development</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/development/buildenvironments.html">Build
+                        Environments</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/symlinks.html">How we use
+                        symlinks</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/settings.html">Interesting
+                        Settings</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/i18n.html">Internationalization</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/issue-labels.html">Overview of
+                        issue labels</a></li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/api/index.html">API</a></li>
+                </ul>
+                <p class="caption"><span class="caption-text">Business Documentation</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/business/index.html">Read the
+                        Docs Business Features</a></li>
+                </ul>
+                <p class="caption"><span class="caption-text">Custom Install Documentation</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/custom_installs/index.html">Info
+                        about custom installs</a></li>
+                </ul>
+                <p class="caption"><span class="caption-text">Designer Documentation</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="current reference internal"
+                                                      href="http://docs.readthedocs.io/en/latest/design.html#"><span
+                            class="toctree-expand"></span>Designing Read the Docs</a>
+                        <ul>
+                            <li class="toctree-l2"><a class="reference internal"
+                                                      href="http://docs.readthedocs.io/en/latest/design.html#style-catalog">Style
+                                Catalog</a></li>
+                            <li class="toctree-l2"><a class="reference internal"
+                                                      href="http://docs.readthedocs.io/en/latest/design.html#typekit-fonts">Typekit
+                                Fonts</a></li>
+                            <li class="toctree-l2"><a class="reference internal"
+                                                      href="http://docs.readthedocs.io/en/latest/design.html#readthedocs-org-changes">Readthedocs.org
+                                Changes</a></li>
+                            <li class="toctree-l2"><a class="reference internal"
+                                                      href="http://docs.readthedocs.io/en/latest/design.html#sphinx-template-changes">Sphinx
+                                Template Changes</a></li>
+                            <li class="toctree-l2"><a class="reference internal"
+                                                      href="http://docs.readthedocs.io/en/latest/design.html#contributing">Contributing</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal"
+                                              href="http://docs.readthedocs.io/en/latest/theme.html">Read the Docs
+                        Theme</a></li>
+                </ul>
+
+
+            </div>
+            <div class="rtd-pro wy-menu">
+                <div class="rtd-pro-about"><a href="https://readthedocs.org/sustainability/advertising/"><i
+                        class="fa fa-info-circle"></i></a></div>
+                <a class="rtd-pro-image-wrapper" href="http://readthedocs.org/sustainability/click/150/LMZpgShksFxs/"
+                   target="_blank"><img class="rtd-pro-image" src="./readthedoc_index_files/saved_resource"></a><span>Join The Recompiler, a feminist hacker zine, for Year 3: tutorials, commentary, and more.</span>
+            </div>
+            <div class="rtd-pro-wrapper"></div>
+        </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+
+        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+
+            <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+            <a href="http://docs.readthedocs.io/en/latest/index.html">Read the Docs</a>
+
+        </nav>
+
+
+        <div class="wy-nav-content">
+            <div class="rst-content">
+
+
+                <div role="navigation" aria-label="breadcrumbs navigation">
+
+                    <ul class="wy-breadcrumbs">
+
+                        <li><a href="http://docs.readthedocs.io/en/latest/index.html">Docs</a> Â»</li>
+
+                        <li>Designing Read the Docs</li>
+
+
+                        <li class="wy-breadcrumbs-aside">
+
+
+                            <a href="https://github.com/rtfd/readthedocs.org/blob/master/docs/design.rst"
+                               class="fa fa-github"> Edit on GitHub</a>
+
+
+                        </li>
+
+                    </ul>
+
+
+                    <hr>
+                </div>
+                <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                    <div itemprop="articleBody">
+
+                        <div class="section" id="designing-read-the-docs">
+                            <span id="id1"></span>
+                            <h1>Designing Read the Docs<a class="headerlink"
+                                                          href="http://docs.readthedocs.io/en/latest/design.html#designing-read-the-docs"
+                                                          title="Permalink to this headline">Â¶</a></h1>
+                            <p>So youâ€™re thinking of contributing some of your
+                                time and design skills to Read the Docs? Thatâ€™s
+                                <strong>awesome</strong>. This document will lead you through
+                                a few features available to ease the process of
+                                working with Read the Docâ€™s CSS and static assets.</p>
+                            <p>To start, you should follow the <a class="reference internal"
+                                                                  href="http://docs.readthedocs.io/en/latest/install.html#installing-read-the-docs"><span
+                                    class="std std-ref">Installation</span></a> instructions
+                                to get a working copy of the Read the Docs repository locally.</p>
+                            <div class="section" id="style-catalog">
+                                <h2>Style Catalog<a class="headerlink"
+                                                    href="http://docs.readthedocs.io/en/latest/design.html#style-catalog"
+                                                    title="Permalink to this headline">Â¶</a></h2>
+                                <p>Once you have RTD running locally, you can open <code class="docutils literal"><span
+                                        class="pre">http://localhost:8000/style-catalog/</span></code>
+                                    for a quick overview of the currently available styles.</p>
+                                <img alt="_images/headers.png" src="./readthedoc_index_files/headers.png">
+                                <p>This way you can quickly get started writing HTML â€“ or if youâ€™re
+                                    modifying existing styles you can get a quick idea of how things
+                                    will change site-wide.</p>
+                            </div>
+                            <div class="section" id="typekit-fonts">
+                                <h2>Typekit Fonts<a class="headerlink"
+                                                    href="http://docs.readthedocs.io/en/latest/design.html#typekit-fonts"
+                                                    title="Permalink to this headline">Â¶</a></h2>
+                                <p>RTD uses <a class="reference external"
+                                               href="https://typekit.com/fonts/ff-meta-web-pro">FF Meta</a> via TypeKit
+                                    to render most display and body text.</p>
+                                <p>To make this work locally, you can register a free TypeKit account and
+                                    create a site profile for <code class="docutils literal"><span class="pre">localhost:8000</span></code>
+                                    that includes the linked font.</p>
+                            </div>
+                            <div class="section" id="readthedocs-org-changes">
+                                <h2>Readthedocs.org Changes<a class="headerlink"
+                                                              href="http://docs.readthedocs.io/en/latest/design.html#readthedocs-org-changes"
+                                                              title="Permalink to this headline">Â¶</a></h2>
+                                <p>Styles for the primary RTD site are located in <code class="docutils literal"><span
+                                        class="pre">media/css</span></code> directory.</p>
+                                <p>These styles only affect the primary site â€“ <strong>not</strong> any of the
+                                    generated
+                                    documentation using the default RTD style.</p>
+                            </div>
+                            <div class="section" id="sphinx-template-changes">
+                                <h2>Sphinx Template Changes<a class="headerlink"
+                                                              href="http://docs.readthedocs.io/en/latest/design.html#sphinx-template-changes"
+                                                              title="Permalink to this headline">Â¶</a></h2>
+                                <p>Styles for generated documentation are located in <code
+                                        class="docutils literal"><span class="pre">readthedocs/templates/sphinx/_static/rtd.css</span></code>
+                                </p>
+                                <p>Of note, projects will retain the version of that file they were last built with â€“
+                                    so if youâ€™re
+                                    editing that file and not seeing any changes to your local built documentation, you
+                                    need to rebuild
+                                    your example project.</p>
+                            </div>
+                            <div class="section" id="contributing">
+                                <h2>Contributing<a class="headerlink"
+                                                   href="http://docs.readthedocs.io/en/latest/design.html#contributing"
+                                                   title="Permalink to this headline">Â¶</a></h2>
+                                <p>Contributions should follow the <a class="reference internal"
+                                                                      href="http://docs.readthedocs.io/en/latest/contribute.html#contributing-to-read-the-docs"><span
+                                        class="std std-ref">Contributing to Read the Docs</span></a> guidelines where
+                                    applicable â€“ ideally youâ€™ll
+                                    create a pull request against the <a class="reference external"
+                                                                         href="https://github.com/rtfd/readthedocs.org/pulls">Read
+                                        the Docs GitHub project</a> from your forked repo and include
+                                    a brief description of what you added / removed / changed, as well as an attached
+                                    image (you can just
+                                    take a screenshot and drop it into the PR creation form) of the effects of your
+                                    changes.</p>
+                                <p>Thereâ€™s not a hard browser range, but your design changes should work reasonably
+                                    well across all major
+                                    browsers, IE8+ â€“ thatâ€™s not to say it needs to be pixel-perfect in older
+                                    browsers! Just avoid
+                                    making changes that render older browsers utterly unusable (or provide a sane
+                                    fallback).</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="articleComments">
+
+                    </div>
+                </div>
+                <footer>
+
+                    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+
+                        <a href="http://docs.readthedocs.io/en/latest/theme.html" class="btn btn-neutral float-right"
+                           title="Read the Docs Theme" accesskey="n" rel="next">Next <span
+                                class="fa fa-arrow-circle-right"></span></a>
+
+
+                        <a href="http://docs.readthedocs.io/en/latest/custom_installs/local_rtd_vm.html"
+                           class="btn btn-neutral" title="Local VM Install" accesskey="p" rel="prev"><span
+                                class="fa fa-arrow-circle-left"></span> Previous</a>
+
+                    </div>
+
+
+                    <hr>
+
+                    <div role="contentinfo">
+                        <p>
+                            Â© Copyright 2010-2017, Read the Docs, Inc &amp; contributors.
+
+                            <span class="commit">
+          Revision <code>c7e4f538</code>.
+        </span>
+
+
+                        </p>
+                    </div>
+                    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a
+                        href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a
+                        href="https://readthedocs.org/">Read the Docs</a>.
+
+                </footer>
+
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: latest
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions"><!-- Inserted RTD Footer -->
+        <div class="injected">
+
+
+            <dl>
+                <dt>Versions</dt>
+
+                <strong>
+                    <dd><a href="http://docs.readthedocs.io/en/latest/design.html">latest</a></dd>
+                </strong>
+
+            </dl>
+
+
+            <dl>
+                <dt>Downloads</dt>
+
+                <dd><a href="http://readthedocs.org/projects/docs/downloads/pdf/latest/">PDF</a></dd>
+
+                <dd><a href="http://readthedocs.org/projects/docs/downloads/htmlzip/latest/">HTML</a></dd>
+
+                <dd><a href="http://readthedocs.org/projects/docs/downloads/epub/latest/">Epub</a></dd>
+
+            </dl>
+
+
+            <dl>
+                <!-- These are kept as relative links for internal installs that are http -->
+                <dt>On Read the Docs</dt>
+                <dd>
+                    <a href="http://readthedocs.org/projects/docs/">Project Home</a>
+                </dd>
+                <dd>
+                    <a href="http://readthedocs.org/projects/docs/builds/">Builds</a>
+                </dd>
+                <dd>
+                    <a href="http://readthedocs.org/projects/docs/downloads/">Downloads</a>
+                </dd>
+            </dl>
+
+
+            <dl>
+                <dt>On GitHub</dt>
+                <dd>
+                    <a href="https://github.com/rtfd/readthedocs.org/blob/master/docs/design.rst">View</a>
+                </dd>
+                <dd>
+                    <a href="https://github.com/rtfd/readthedocs.org/edit/master/docs/design.rst">Edit</a>
+                </dd>
+            </dl>
+
+
+            <dl>
+                <dt>Search</dt>
+                <dd>
+                    <div style="padding: 6px;">
+                        <form id="flyout-search-form" class="wy-form" target="_blank"
+                              action="http://readthedocs.org/projects/docs/search/" method="get">
+                            <input type="text" name="q" placeholder="Search docs">
+                        </form>
+                    </div>
+                </dd>
+            </dl>
+
+
+            <hr>
+
+            Free document hosting provided by <a href="https://readthedocs.org/">Read the Docs</a>.
+
+
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+
+</script>
+<script type="text/javascript" src="./readthedoc_index_files/jquery-2.0.3.min.js.ä¸‹è¼‰"></script>
+<script type="text/javascript" src="./readthedoc_index_files/jquery-migrate-1.2.1.min.js.ä¸‹è¼‰"></script>
+<script type="text/javascript" src="./readthedoc_index_files/underscore.js.ä¸‹è¼‰"></script>
+<script type="text/javascript" src="./readthedoc_index_files/doctools.js.ä¸‹è¼‰"></script>
+<script type="text/javascript" src="./readthedoc_index_files/readthedocs-doc-embed.js.ä¸‹è¼‰"></script>
+
+
+<script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+
+</script>
+
+
+</body>
+</html>

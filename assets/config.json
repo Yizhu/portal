@@ -1,0 +1,13 @@
+{
+  "api": {
+    "loopBackURL": "http://10.37.36.105:2000",
+    "loopBackApiVersion": "api"
+  },
+  "language": [{
+    "name": "中文",
+    "value": "zh"
+  }, {
+    "name": "English",
+    "value": "en"
+  }]
+}
